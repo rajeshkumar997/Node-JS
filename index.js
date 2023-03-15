@@ -113,11 +113,65 @@
 // }, 2000)
 // console.log("complete exe....");
 
-//asynchronous programming draback
+//asynchronous programming drowback
 
-let a = 10;
-let b = 0;
-setTimeout(() => {
-    b = 20;
-}, 2000)
-console.log(a + b);
+// let a = 10;
+// let b = 0;
+
+// setTimeout(() => {
+//     b = 20;
+// }, 2000)
+
+// console.log(a + b);
+
+/////////   Handle Asynchronous data in node js ////////////
+
+// let a = 10;
+// let b = 0;
+
+// let promise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve(30)
+//     }, 2000)
+// })
+// promise.then((data) => {
+//     b = data;
+//     console.log(a + b);
+// })
+
+
+//////////////         How Node js works /////////////
+
+//call stack
+//node api
+//callback queue
+
+// console.log("starting up");
+
+// setTimeout(() => {
+//     console.log("2 second log");
+// }, 2000)
+
+// setTimeout(() => {
+//     console.log("0 second log");
+// }, 0)
+
+// console.log("finishing up");
+
+
+
+
+//////////////////////////        EXPRESS JS       //////////////////
+
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+    res.send("hello this is home page")
+})
+
+app.get('/about', (req, res) => {
+    res.send("hello this is about page")
+})
+
+app.listen(5000);
